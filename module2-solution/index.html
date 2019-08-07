@@ -26,6 +26,7 @@
     <center>
     <div ng-controller='AlreadyBoughtController as List2'>
       <h3>bought</h3>
+    <div class="emptyMessage" ng-if = "List2.Items2.length == 0">Nothing bought yet.</div>
       <ul>
         <li ng-repeat="element in List2.Items2"> Bought {{element.quantity}} {{element.name}}(s)
       </li>
