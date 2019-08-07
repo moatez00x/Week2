@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html ng-app="App">
+  <head>
+    <meta charset="utf-8">
+ <script src="angular.min.js" ></script>
+  <script src="app.js" ></script>
+  <style >body {front-size :1.2em;}   </style>
+  <title>assignment 2 </title>
+  </head>
+  <body>
+    <left>
+      <!-- List1 -->
+    <h1>Shopping List</h1>
+    <div ng-controller='ToBuyController as List1'>
+      <h3>To buy</h3>
+      <div ng-if="List1.notif1"  class="error">  {{List1.notif1}} </div>
+      <ul>
+        <li ng-repeat="item in List1.getItems"> Buy {{item.quantity}} of {{item.name}}(s)
+          <button ng-click="List1.bought($index);">Bought</button>
+      </li>
+</ul>
+    </div>
+  </left>
+    <!-- List2 -->
+    <center>
+    <div ng-controller='AlreadyBoughtController as List2'>
+      <h3>bought</h3>
+      <ul>
+        <li ng-repeat="element in List2.Items2"> Bought {{element.quantity}} {{element.name}}(s)
+      </li>
+    </ul>
+    </div>
+  </center>
+
+
+
+  </body>
+</html>
